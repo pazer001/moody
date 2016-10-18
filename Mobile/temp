@@ -1,0 +1,19 @@
+var x = document.querySelectorAll('[type="checkbox"]')
+for(var i in x) {x[i].checked = true}
+
+
+const songs     =   this.props.appState.currentPlayList;
+        let songsIndex  =   0,
+            songsLength =   songs.length,
+            cards       =   [];
+        for(songsIndex; songsIndex < songsLength; songsIndex) {
+            cards.push(
+                <View key={songs[songsIndex].id} style={styles.slide} onLayout={this._onLayout.bind(this)}>
+                    {songs[songsIndex].backgroundImage
+                        ? <Image  source={{uri: songs[songsIndex].backgroundImage}} style={{width: this.props.appState.componentsState.SongsSwiper.coverWidth, height: this.props.appState.componentsState.SongsSwiper.coverHeight}} ><Text style={styles.text}>{song.artist} - {songs[songsIndex].title}</Text></Image>
+                        : <Text style={styles.text}>{songs[songsIndex].artist} - {songs[songsIndex].title}</Text>
+                    }
+                </View>)
+        }
+
+        return cards
